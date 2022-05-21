@@ -4,11 +4,11 @@
 
 SDL_Texture* SDL_BaseHandler::loadImage(string filename)
 {
-	SDL_Surface* loadedImage = NULL;
+	SDL_Surface* loadedImage = nullptr;
 
 	loadedImage = IMG_Load(filename.c_str());
 
-	if (loadedImage == NULL)
+	if (loadedImage == nullptr)
 	{
 		cout << "Couldn't load " << filename << endl;
 	}
@@ -118,7 +118,7 @@ bool SDL_BaseHandler::init()
 	{
 		//Create window
 		m_window = SDL_CreateWindow("Classic Chess", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-		if (m_window == NULL)
+		if (m_window == nullptr)
 		{
 			printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
 		}

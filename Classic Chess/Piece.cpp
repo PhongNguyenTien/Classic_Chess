@@ -69,12 +69,12 @@ King* Piece::getOwnKing(Piece* field[8][8])
 }
 
 Piece::Piece(Team team, Position pos, SDL_BaseHandler* m_handler, PieceType type)
-	:m_team(team), m_pos(pos), m_handler(m_handler), m_texture(NULL), m_hasMoved(false), m_type(type)
+	:m_team(team), m_pos(pos), m_handler(m_handler), m_texture(nullptr), m_hasMoved(false), m_type(type)
 {
 }
 
 Piece::Piece(const Piece& piece)
-	: m_team(piece.m_team), m_pos(piece.m_pos), m_handler(piece.m_handler), m_texture(NULL), m_hasMoved(false), m_type(piece.m_type)
+	: m_team(piece.m_team), m_pos(piece.m_pos), m_handler(piece.m_handler), m_texture(nullptr), m_hasMoved(false), m_type(piece.m_type)
 {
 }
 
