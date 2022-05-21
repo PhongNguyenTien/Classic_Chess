@@ -1,10 +1,10 @@
 # Classic_Chess
 A simple program which is relevant to SDL2 library and C++.
 ## Hướng dẫn cài đặt 
-- Tạo 1 folder mới, đặt tên là ClassicChess.
+- Tạo 1 folder mới, đặt tên là Classic Chess.
 - Trong Visual Studio, chọn Clone a Repository trong mục Get Started.
 - Tại mục Repository Location, dán đường link https://github.com/PhongNguyenTien/Classic_Chess.git .
-- Tại mục Path, nhấn chuột vào dấu ba chấm bên phải, chọn thư mục ClassicChess vừa tạo, rồi nhấn Select Folder, sau đó nhấn Clone.
+- Tại mục Path, nhấn chuột vào dấu ba chấm bên phải, chọn thư mục Classic Chess vừa tạo, rồi nhấn Select Folder, sau đó nhấn Clone.
 - Sau khi đã clone xong, mở file Classic Chess.sln trong phần Solution Explorer.
 - Trong project Classic Chess có chứa các file .cpp và file .h, nhấn vào Local Windows Debugger để chạy chương trình.
 ## Mô tả chung về trò chơi
