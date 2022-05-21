@@ -445,7 +445,7 @@ void Game::renderPossibleMoves(Piece* piece)
     vector<PositionMoveType> possible = piece->getPossibleMoves();
     SDL_Rect rectangle;
     for (const auto& value : possible) {
-        if ((value.x % 2 == 0 && value.y % 2 == 1) || (value.x % 2 == 1 && value.y % 2 == 0))
+        if ((value.x + value.y) % 2 != 0)
         {
             SDL_SetRenderDrawColor(m_handler->m_renderer, 0, 134, 139, 255);
         }
