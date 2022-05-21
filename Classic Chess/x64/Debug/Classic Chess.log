@@ -1,0 +1,13 @@
+﻿  main.cpp
+  MainLoop.cpp
+  Queen.cpp
+  Bishop.cpp
+  Game.cpp
+  King.cpp
+  Knight.cpp
+  Pawn.cpp
+  Piece.cpp
+  Rook.cpp
+  SDL_BaseHandler.cpp
+  Generating Code...
+  Classic Chess.vcxproj -> C:\Users\Banico\Desktop\Classic Chess\x64\Debug\Classic Chess.exe
