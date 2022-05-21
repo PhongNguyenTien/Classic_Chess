@@ -248,7 +248,7 @@ void Game::exchange(int xStart, int yStart, int xEnd, int yEnd)
 
     while (quit == false)
     {
-        while (SDL_WaitEvent(&m_handler->m_event))
+        while (SDL_PollEvent(&m_handler->m_event))
         {
             if (m_handler->m_event.type == SDL_QUIT)
             {
