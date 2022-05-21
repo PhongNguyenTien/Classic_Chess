@@ -34,5 +34,5 @@ A simple program which is relevant to SDL2 library and C++.
 ## Những điều tâm đắc khi làm game Classic_Chess
 - Biết thêm về cách chơi cờ vua.
 - Biết cách triển khai chương trình thành các file nhỏ hơn, qua đó quản lí code cũng như sửa lỗi dễ dàng hơn.
-- Trước khi bắt đầu viết code 1 chương trình có nhiều đối tượng như game, việc hình dung game có những đối tượng nào và vạch rõ từng đặc điểm về từng đối tượng sẽ giúp viết code các chức năng của đối tượng dễ dàng hơn.
+- Trước khi bắt đầu viết code 1 chương trình có nhiều đối tượng như game, việc hình dung game có những đối tượng nào và vạch rõ từng đặc điểm về từng đối tượng sẽ giúp viết code các chức năng của đối tượng dễ dàng hơn rất nhiều.
 - Học hỏi từ các bạn xung quanh là cách tuyệt vời để có thêm kiến thức.
