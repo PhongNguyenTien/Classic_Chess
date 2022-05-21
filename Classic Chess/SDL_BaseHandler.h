@@ -13,9 +13,9 @@ public:
 	const int SCREEN_WIDTH = 640;
 	const int SCREEN_HEIGHT = 640;
 
-	SDL_Window* m_window = nullptr;
+	SDL_Window* m_window = nullptrptr;
 
-	SDL_Renderer* m_renderer = nullptr;
+	SDL_Renderer* m_renderer = nullptrptr;
 
 	SDL_Event m_event;
 

@@ -20,10 +20,10 @@ vector<PositionMoveType> Piece::pushMove(vector<PositionMoveType> moveList,
 		Piece* zwisch = field[move.x][move.y];
 		enemyPlace = false;
 
-		if (field[move.x][move.y] != nullptr)
+		if (field[move.x][move.y] != nullptrptr)
 		{
 			enemyPlace = true;
-			field[move.x][move.y] = nullptr;
+			field[move.x][move.y] = nullptrptr;
 		}
 
 		swap(field[move.x][move.y], field[m_pos.x][m_pos.y]);
@@ -56,7 +56,7 @@ King* Piece::getOwnKing(Piece* field[8][8])
 	{
 		for (int j = 0; j < 8; j++)
 		{
-			if (field[i][j] != nullptr)
+			if (field[i][j] != nullptrptr)
 			{
 				if (field[i][j]->getTeam() == m_team && field[i][j]->getType() == KING)
 				{
@@ -65,16 +65,16 @@ King* Piece::getOwnKing(Piece* field[8][8])
 			}
 		}
 	}
-	return nullptr;
+	return nullptrptr;
 }
 
 Piece::Piece(Team team, Position pos, SDL_BaseHandler* m_handler, PieceType type)
-	:m_team(team), m_pos(pos), m_handler(m_handler), m_texture(NULL), m_hasMoved(false), m_type(type)
+	:m_team(team), m_pos(pos), m_handler(m_handler), m_texture(nullptr), m_hasMoved(false), m_type(type)
 {
 }
 
 Piece::Piece(const Piece& piece)
-	: m_team(piece.m_team), m_pos(piece.m_pos), m_handler(piece.m_handler), m_texture(NULL), m_hasMoved(false), m_type(piece.m_type)
+	: m_team(piece.m_team), m_pos(piece.m_pos), m_handler(piece.m_handler), m_texture(nullptr), m_hasMoved(false), m_type(piece.m_type)
 {
 }
 

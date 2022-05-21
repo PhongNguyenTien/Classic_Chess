@@ -37,7 +37,7 @@ void King::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 		{
 			if (m_pos.x + dx >= 0 && m_pos.x + dx <= 7 && m_pos.y + dy >= 0 && m_pos.y + dy <= 7)
 			{
-				if (field[m_pos.x + dx][m_pos.y + dy] != nullptr)
+				if (field[m_pos.x + dx][m_pos.y + dy] != nullptrptr)
 				{
 					if (field[m_pos.x + dx][m_pos.y + dy]->getTeam() != m_team)
 					{
@@ -67,7 +67,7 @@ void King::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 			for (int j = 0; j <= 7; j += 7)
 			{
 				castles = true;
-				if (field[i][j] != nullptr)
+				if (field[i][j] != nullptrptr)
 				{
 					if (field[i][j]->getTeam() == m_team && field[i][j]->getType() == ROOK && !field[i][j]->m_hasMoved)
 					{
@@ -84,13 +84,13 @@ void King::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 							b = 6;
 							c = 6;
 						}
-						if (field[a][j] == nullptr && field[b][j] == nullptr && field[c][j] == nullptr)
+						if (field[a][j] == nullptrptr && field[b][j] == nullptrptr && field[c][j] == nullptrptr)
 						{
 							for (int k = 0; k < 8; k++)
 							{
 								for (int l = 0; l < 8; l++)
 								{
-									if (field[k][l] != nullptr)
+									if (field[k][l] != nullptrptr)
 									{
 										if (field[k][l]->getTeam() != m_team)
 										{
@@ -141,7 +141,7 @@ void King::setCheck(Piece* field[8][8], int x, int y)
 	{
 		for (int j = 0; j < 8; j++)
 		{
-			if (field[i][j] != nullptr)
+			if (field[i][j] != nullptrptr)
 			{
 				if (field[i][j]->getTeam() != m_team)
 				{

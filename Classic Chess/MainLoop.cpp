@@ -14,7 +14,7 @@ void runGameLoop()
 	int yStart = -1;
 	int xEnd = -1;
 	int yEnd = -1;
-	Piece* clickedOn = nullptr;
+	Piece* clickedOn = nullptrptr;
 
 	while (quit == false)
 	{
@@ -30,7 +30,7 @@ void runGameLoop()
 				xStart = m_handler->m_event.button.x / 80;
 				yStart = m_handler->m_event.button.y / 80;
 				clickedOn = game->getFieldPos(xStart, yStart);
-				if (clickedOn != nullptr)
+				if (clickedOn != nullptrptr)
 				{
 					if (clickedOn->getTeam() == game->getTurn())
 					{
@@ -41,7 +41,7 @@ void runGameLoop()
 
 			if (m_handler->m_event.type == SDL_MOUSEBUTTONUP)
 			{
-				if (clickedOn != nullptr)
+				if (clickedOn != nullptrptr)
 				{
 					if (clickedOn->getTeam() == game->getTurn())
 					{
@@ -50,7 +50,7 @@ void runGameLoop()
 				}
 				xEnd = m_handler->m_event.button.x / 80;
 				yEnd = m_handler->m_event.button.y / 80;
-				if (clickedOn != nullptr)
+				if (clickedOn != nullptrptr)
 				{
 					if ((xStart != -1 && yStart != -1 && xEnd != -1 && yEnd != -1)
 						&& (clickedOn->getTeam() == game->getTurn())
@@ -68,7 +68,7 @@ void runGameLoop()
 						yStart = -1;
 						yEnd = -1;
 						game->calcAllMoves();
-						clickedOn = nullptr;
+						clickedOn = nullptrptr;
 					}
 				}
 			}

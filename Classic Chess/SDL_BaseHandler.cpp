@@ -4,11 +4,11 @@
 
 SDL_Texture* SDL_BaseHandler::loadImage(string filename)
 {
-	SDL_Surface* loadedImage = NULL;
+	SDL_Surface* loadedImage = nullptr;
 
 	loadedImage = IMG_Load(filename.c_str());
 
-	if (loadedImage == NULL)
+	if (loadedImage == nullptr)
 	{
 		cout << "Couldn't load " << filename << endl;
 	}
@@ -74,7 +74,7 @@ void SDL_BaseHandler::cleanUp()
 
 void SDL_BaseHandler::DrawRectangle(SDL_Rect source, SDL_Rect dest, SDL_Texture* text)
 {
-	if (text != nullptr)
+	if (text != nullptrptr)
 	{
 		SDL_RenderCopy(m_renderer, text, &source, &dest);
 		SDL_RenderPresent(m_renderer);
@@ -83,7 +83,7 @@ void SDL_BaseHandler::DrawRectangle(SDL_Rect source, SDL_Rect dest, SDL_Texture*
 	}
 	else
 	{
-		cout << "DrawRectangle: text was nullptr" << endl;
+		cout << "DrawRectangle: text was nullptrptr" << endl;
 	}
 }
 
@@ -102,8 +102,8 @@ SDL_BaseHandler::SDL_BaseHandler()
 
 bool SDL_BaseHandler::init()
 {
-	m_window = nullptr;
-	//m_gameSurface = nullptr;
+	m_window = nullptrptr;
+	//m_gameSurface = nullptrptr;
 
 	bool quit = false;
 
@@ -118,7 +118,7 @@ bool SDL_BaseHandler::init()
 	{
 		//Create window
 		m_window = SDL_CreateWindow("Classic Chess", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-		if (m_window == NULL)
+		if (m_window == nullptr)
 		{
 			printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
 		}
