@@ -74,7 +74,7 @@ void SDL_BaseHandler::cleanUp()
 
 void SDL_BaseHandler::DrawRectangle(SDL_Rect source, SDL_Rect dest, SDL_Texture* text)
 {
-	if (text != nullptrptr)
+	if (text != nullptr)
 	{
 		SDL_RenderCopy(m_renderer, text, &source, &dest);
 		SDL_RenderPresent(m_renderer);
@@ -83,7 +83,7 @@ void SDL_BaseHandler::DrawRectangle(SDL_Rect source, SDL_Rect dest, SDL_Texture*
 	}
 	else
 	{
-		cout << "DrawRectangle: text was nullptrptr" << endl;
+		cout << "DrawRectangle: text was nullptr" << endl;
 	}
 }
 
@@ -102,8 +102,8 @@ SDL_BaseHandler::SDL_BaseHandler()
 
 bool SDL_BaseHandler::init()
 {
-	m_window = nullptrptr;
-	//m_gameSurface = nullptrptr;
+	m_window = nullptr;
+	//m_gameSurface = nullptr;
 
 	bool quit = false;
 

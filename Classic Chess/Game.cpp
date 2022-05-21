@@ -84,7 +84,7 @@ Game::Game(SDL_BaseHandler* handler)
     {
         for (int j = 0; j < 8; j++)
         {
-            m_field[j][i] = nullptrptr;
+            m_field[j][i] = nullptr;
         }
     }
 
@@ -140,10 +140,10 @@ void Game::normal(int xStart, int yStart, int xEnd, int yEnd)
 {
     m_field[xEnd][yEnd] = getFieldPos(xStart, yStart);
     m_field[xEnd][yEnd]->m_hasMoved = true;
-    m_field[xStart][yStart] = nullptrptr;
+    m_field[xStart][yStart] = nullptr;
     m_handler->undoPieceRender(xStart, yStart);
     m_field[xEnd][yEnd]->setPosition(Position(xEnd, yEnd));
-    if (m_field[xEnd][yEnd] != nullptrptr)
+    if (m_field[xEnd][yEnd] != nullptr)
     {
         m_handler->undoPieceRender(xEnd, yEnd);
     }
@@ -155,7 +155,7 @@ void Game::normal(int xStart, int yStart, int xEnd, int yEnd)
         {
             if (xEnd - 1 >= 0)
             {
-                if (m_field[xEnd - 1][yEnd] != nullptrptr)
+                if (m_field[xEnd - 1][yEnd] != nullptr)
                 {
                     if (m_field[xEnd - 1][yEnd]->getType() == PAWN)
                     {
@@ -168,7 +168,7 @@ void Game::normal(int xStart, int yStart, int xEnd, int yEnd)
 
             if (xEnd + 1 <= 7)
             {
-                if (m_field[xEnd + 1][yEnd] != nullptrptr)
+                if (m_field[xEnd + 1][yEnd] != nullptr)
                 {
                     if (m_field[xEnd + 1][yEnd]->getType() == PAWN)
                     {
@@ -186,10 +186,10 @@ void Game::normal(int xStart, int yStart, int xEnd, int yEnd)
 void Game::enPassant(int xStart, int yStart, int xEnd, int yEnd)
 {
     Pawn* pawn_start = static_cast<Pawn*>(m_field[xStart][yStart]);
-    m_field[xEnd][yEnd - pawn_start->dy] = nullptrptr;
+    m_field[xEnd][yEnd - pawn_start->dy] = nullptr;
     m_field[xEnd][yEnd] = getFieldPos(xStart, yStart);
     m_field[xEnd][yEnd]->m_hasMoved = true;
-    m_field[xStart][yStart] = nullptrptr;
+    m_field[xStart][yStart] = nullptr;
     m_handler->undoPieceRender(xStart, yStart);
     m_handler->undoPieceRender(xEnd, yEnd - pawn_start->dy);
     m_field[xEnd][yEnd]->setPosition(Position(xEnd, yEnd));
@@ -244,7 +244,7 @@ void Game::exchange(int xStart, int yStart, int xEnd, int yEnd)
     int x = -1;
     int y = -1;
 
-    Piece* clickedOn = nullptrptr;
+    Piece* clickedOn = nullptr;
 
     while (quit == false)
     {
@@ -282,7 +282,7 @@ void Game::exchange(int xStart, int yStart, int xEnd, int yEnd)
                 }
             }
 
-            if (m_handler->m_event.type == SDL_MOUSEBUTTONUP && clickedOn != nullptrptr)
+            if (m_handler->m_event.type == SDL_MOUSEBUTTONUP && clickedOn != nullptr)
             {
                 quit = true;
             }
@@ -290,7 +290,7 @@ void Game::exchange(int xStart, int yStart, int xEnd, int yEnd)
     }
 
     m_field[xEnd][yEnd] = clickedOn;
-    m_field[xStart][yStart] = nullptrptr;
+    m_field[xStart][yStart] = nullptr;
     m_handler->undoPieceRender(xStart, yStart);
     m_handler->renderBackground();
 
@@ -298,7 +298,7 @@ void Game::exchange(int xStart, int yStart, int xEnd, int yEnd)
     {
         for (int j = 0; j < 8; j++)
         {
-            if (m_field[i][j] != nullptrptr)
+            if (m_field[i][j] != nullptr)
             {
                 m_field[i][j]->render();
             }
@@ -322,8 +322,8 @@ void Game::castles(int xStart, int yStart, int xEnd, int yEnd)
         m_field[3][yEnd]->m_hasMoved = true;
         m_field[2][yEnd]->setPosition(Position(2, yEnd));
         m_field[3][yEnd]->setPosition(Position(3, yEnd));
-        m_field[4][yEnd] = nullptrptr;
-        m_field[0][yEnd] = nullptrptr;
+        m_field[4][yEnd] = nullptr;
+        m_field[0][yEnd] = nullptr;
         m_handler->undoPieceRender(4, yEnd);
         m_handler->undoPieceRender(0, yEnd);
         m_field[2][yEnd]->render();
@@ -337,8 +337,8 @@ void Game::castles(int xStart, int yStart, int xEnd, int yEnd)
         m_field[5][yEnd]->m_hasMoved = true;
         m_field[6][yEnd]->setPosition(Position(6, yEnd));
         m_field[5][yEnd]->setPosition(Position(5, yEnd));
-        m_field[4][yEnd] = nullptrptr;
-        m_field[7][yEnd] = nullptrptr;
+        m_field[4][yEnd] = nullptr;
+        m_field[7][yEnd] = nullptr;
         m_handler->undoPieceRender(4, yEnd);
         m_handler->undoPieceRender(7, yEnd);
         m_field[6][yEnd]->render();
@@ -361,7 +361,7 @@ void Game::gameState()
     {
         for (int j = 0; j < 8; j++)
         {
-            if (m_field[i][j] != nullptrptr)
+            if (m_field[i][j] != nullptr)
             {
                 if (m_field[i][j]->getTeam() != turn)
                 {
@@ -427,7 +427,7 @@ void Game::disableEnPassant()
     {
         for (int j = 0; j < 8; j++)
         {
-            if (m_field[i][j] != nullptrptr)
+            if (m_field[i][j] != nullptr)
             {
                 if (m_field[i][j]->getType() == PAWN)
                 {
@@ -463,7 +463,7 @@ void Game::renderPossibleMoves(Piece* piece)
         {
             for (int j = 0; j < 8; j++)
             {
-                if (m_field[i][j] != nullptrptr)
+                if (m_field[i][j] != nullptr)
                 {
                     m_field[i][j]->render();
                 }
@@ -495,7 +495,7 @@ void Game::undoRenderPossibleMoves(Piece* piece)
         {
             for (int j = 0; j < 8; j++)
             {
-                if (m_field[i][j] != nullptrptr)
+                if (m_field[i][j] != nullptr)
                 {
                     m_field[i][j]->render();
                 }
@@ -510,7 +510,7 @@ void Game::calcAllMoves()
     {
         for (int j = 0; j < 8; j++)
         {
-            if (m_field[i][j] != nullptrptr)
+            if (m_field[i][j] != nullptr)
             {
                 m_field[i][j]->calcPossibleMoves(m_field, true);
             }

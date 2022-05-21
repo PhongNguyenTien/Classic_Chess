@@ -20,10 +20,10 @@ vector<PositionMoveType> Piece::pushMove(vector<PositionMoveType> moveList,
 		Piece* zwisch = field[move.x][move.y];
 		enemyPlace = false;
 
-		if (field[move.x][move.y] != nullptrptr)
+		if (field[move.x][move.y] != nullptr)
 		{
 			enemyPlace = true;
-			field[move.x][move.y] = nullptrptr;
+			field[move.x][move.y] = nullptr;
 		}
 
 		swap(field[move.x][move.y], field[m_pos.x][m_pos.y]);
@@ -56,7 +56,7 @@ King* Piece::getOwnKing(Piece* field[8][8])
 	{
 		for (int j = 0; j < 8; j++)
 		{
-			if (field[i][j] != nullptrptr)
+			if (field[i][j] != nullptr)
 			{
 				if (field[i][j]->getTeam() == m_team && field[i][j]->getType() == KING)
 				{
@@ -65,7 +65,7 @@ King* Piece::getOwnKing(Piece* field[8][8])
 			}
 		}
 	}
-	return nullptrptr;
+	return nullptr;
 }
 
 Piece::Piece(Team team, Position pos, SDL_BaseHandler* m_handler, PieceType type)

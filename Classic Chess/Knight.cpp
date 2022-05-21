@@ -33,7 +33,7 @@ void Knight::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 		{
 			if (m_pos.x + dx >= 0 && m_pos.x + dx <= 7 && m_pos.y + dy >= 0 && m_pos.y + dy <= 7)
 			{
-				if (field[m_pos.x + dx][m_pos.y + dy] == nullptrptr)
+				if (field[m_pos.x + dx][m_pos.y + dy] == nullptr)
 				{
 					moves = pushMove(moves,
 						PositionMoveType(m_pos.x + dx, m_pos.y + dy, NORMAL),
@@ -41,7 +41,7 @@ void Knight::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 						field,
 						checkCheck);
 				}
-				else if (field[m_pos.x + dx][m_pos.y + dy] != nullptrptr)
+				else if (field[m_pos.x + dx][m_pos.y + dy] != nullptr)
 				{
 					if (field[m_pos.x + dx][m_pos.y + dy]->getTeam() != m_team)
 					{
@@ -62,7 +62,7 @@ void Knight::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 		{
 			if (m_pos.x + dx >= 0 && m_pos.x + dx <= 7 && m_pos.y + dy >= 0 && m_pos.y + dy <= 7)
 			{
-				if (field[m_pos.x + dx][m_pos.y + dy] == nullptrptr)
+				if (field[m_pos.x + dx][m_pos.y + dy] == nullptr)
 				{
 					moves = pushMove(moves,
 						PositionMoveType(m_pos.x + dx, m_pos.y + dy, NORMAL),
@@ -70,7 +70,7 @@ void Knight::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 						field,
 						checkCheck);
 				}
-				else if (field[m_pos.x + dx][m_pos.y + dy] != nullptrptr)
+				else if (field[m_pos.x + dx][m_pos.y + dy] != nullptr)
 				{
 					if (field[m_pos.x + dx][m_pos.y + dy]->getTeam() != m_team)
 					{

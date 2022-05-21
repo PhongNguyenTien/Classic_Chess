@@ -35,7 +35,7 @@ void Queen::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 		{
 			dx_copy = dx;
 			dy_copy = dy;
-			while (field[m_pos.x + dx_copy][m_pos.y + dy_copy] == nullptrptr)
+			while (field[m_pos.x + dx_copy][m_pos.y + dy_copy] == nullptr)
 			{
 				moves = pushMove(moves,
 					PositionMoveType(m_pos.x + dx_copy, m_pos.y + dy_copy, NORMAL),
@@ -59,7 +59,7 @@ void Queen::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 					dy_copy += 1;
 				}
 			}
-			if (field[m_pos.x + dx_copy][m_pos.y + dy_copy] != nullptrptr
+			if (field[m_pos.x + dx_copy][m_pos.y + dy_copy] != nullptr
 				&& (m_pos.x + dx_copy >= 0 && m_pos.x + dx_copy <= 7 && m_pos.y + dy_copy >= 0 && m_pos.y + dy_copy <= 7))
 			{
 				if (field[m_pos.x + dx_copy][m_pos.y + dy_copy]->getTeam() != m_team)

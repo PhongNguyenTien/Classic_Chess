@@ -39,7 +39,7 @@ void Pawn::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 
 	if (m_pos.y + dy == 0 || m_pos.y + dy == 7)
 	{
-		if (field[m_pos.x][m_pos.y + dy] == nullptrptr)
+		if (field[m_pos.x][m_pos.y + dy] == nullptr)
 		{
 			moves = pushMove(moves,
 				PositionMoveType(m_pos.x, m_pos.y + dy, NEWPIECE),
@@ -50,7 +50,7 @@ void Pawn::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 	}
 	else
 	{
-		if (field[m_pos.x][m_pos.y + dy] == nullptrptr)
+		if (field[m_pos.x][m_pos.y + dy] == nullptr)
 		{
 			moves = pushMove(moves,
 				PositionMoveType(m_pos.x, m_pos.y + dy, NORMAL),
@@ -62,7 +62,7 @@ void Pawn::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 
 	if ((m_pos.y + 2 * dy >= 0) && (m_pos.y + 2 * dy <= 7))
 	{
-		if (field[m_pos.x][m_pos.y + 2 * dy] == nullptrptr && field[m_pos.x][m_pos.y + dy] == nullptrptr && !m_hasMoved)
+		if (field[m_pos.x][m_pos.y + 2 * dy] == nullptr && field[m_pos.x][m_pos.y + dy] == nullptr && !m_hasMoved)
 		{
 			moves = pushMove(moves,
 				PositionMoveType(m_pos.x, m_pos.y + 2 * dy, NORMAL),
@@ -74,7 +74,7 @@ void Pawn::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 
 	if (m_pos.x + 1 <= 7)
 	{
-		if (field[m_pos.x + 1][m_pos.y + dy] != nullptrptr)
+		if (field[m_pos.x + 1][m_pos.y + dy] != nullptr)
 		{
 			if (field[m_pos.x + 1][m_pos.y + dy]->getTeam() != m_team)
 			{
@@ -99,7 +99,7 @@ void Pawn::calcPossibleMoves(Piece* field[8][8], bool checkCheck)
 	}
 	if (m_pos.x - 1 >= 0)
 	{
-		if (field[m_pos.x - 1][m_pos.y + dy] != nullptrptr)
+		if (field[m_pos.x - 1][m_pos.y + dy] != nullptr)
 		{
 			if (field[m_pos.x - 1][m_pos.y + dy]->getTeam() != m_team)
 			{
