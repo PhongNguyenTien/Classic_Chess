@@ -15,6 +15,7 @@ A simple program which is relevant to SDL2 library and C++.
 - Ở mỗi bên, khi quân vua bị chiếu, chỉ những nước đi thỏa mãn vua không bị ăn mới được đánh dấu.
 - Có chức năng phong cấp cho tốt và chức năng nhập thành.
 - Báo hiệu game kết thúc khi 1 trong 2 bên bị chiếu hết hoặc hòa cờ.
+- Link video demo: https://youtu.be/3izpdRbbvrI
 ## Các kĩ thuật được sử dụng
 - Chương trình chạy trên C++14, x64.
 - Thư viện đồ họa: SDL2, SDL2_image
