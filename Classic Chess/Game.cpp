@@ -1,5 +1,4 @@
 #include "Game.h"
-#include<iostream>
 #include <string>
 
 Game::Game(SDL_BaseHandler* handler)
